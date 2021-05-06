@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Text, View, Image ,ScrollView } from 'react-native';
+import { Text, View, Image ,ScrollView, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import RBSheet from "react-native-raw-bottom-sheet";
+
+
 
 class Home extends Component {
-    render() {
+    render(props) {
         return (
             <View style={{
                 flex: 1,
@@ -60,7 +63,7 @@ class Home extends Component {
 
                         <Image
                             style={{ width: wp("45%"), height: 150, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-                            source={require("../Assets/burger.jpg")}
+                            source={require("../Assets/bf.jpg")}
                         />
                         <View style={{
                             width: wp("42%"),
@@ -97,10 +100,10 @@ class Home extends Component {
                         width: wp("45%"),
                         borderRadius: 10
                     }}  >
-
+                        <TouchableOpacity  onPress={() => this.props.navigation.navigate('heartylunch')}  >
                         <Image
                             style={{ width: wp("45%"), height: 150, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-                            source={require("../Assets/burger.jpg")}
+                            source={require("../Assets/noodels1.jpg")}
                         />
                         <View style={{
                             width: wp("42%"),
@@ -109,16 +112,17 @@ class Home extends Component {
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: 'bold'
-                            }}>Healthy Breakfast</Text>
+                            }}>Heartly lunch</Text>
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: '800'
-                            }}>Tasty & Healthy</Text>
+                            }}>The recipes</Text>
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: '800'
-                            }}>Breakfast Recipes</Text>
+                            }}>for health</Text>
                         </View>
+                        </TouchableOpacity>
                     </View>
 
                     </View>
@@ -147,9 +151,10 @@ class Home extends Component {
                         borderRadius: 10
                     }}  >
 
+                <TouchableOpacity  onPress={() => this.props.navigation.navigate('heartylunch')}  >
                         <Image
                             style={{ width: wp("45%"), height: 150, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-                            source={require("../Assets/burger.jpg")}
+                            source={require("../Assets/noodles.jpg")}
                         />
                         <View style={{
                             width: wp("42%"),
@@ -158,16 +163,17 @@ class Home extends Component {
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: 'bold'
-                            }}>Healthy Breakfast</Text>
+                            }}>healthy dinner</Text>
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: '800'
-                            }}>Tasty & Healthy</Text>
+                            }}>we streng health</Text>
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: '800'
-                            }}>Breakfast Recipes</Text>
+                            }}>and sleep</Text>
                         </View>
+                </TouchableOpacity>
                     </View>
 
 
@@ -186,7 +192,7 @@ class Home extends Component {
                         width: wp("45%"),
                         borderRadius: 10
                     }}  >
-
+<TouchableOpacity   onPress={() => this.RBSheet.open()}>
                         <Image
                             style={{ width: wp("45%"), height: 150, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
                             source={require("../Assets/burger.jpg")}
@@ -198,21 +204,58 @@ class Home extends Component {
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: 'bold'
-                            }}>Healthy Breakfast</Text>
+                            }}>best snacks</Text>
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: '800'
-                            }}>Tasty & Healthy</Text>
+                            }}>replenish energy</Text>
                             <Text style={{
                                 fontSize: 15,
                                 fontWeight: '800'
-                            }}>Breakfast Recipes</Text>
+                            }}>and vitamins</Text>
                         </View>
+                        </TouchableOpacity>
                     </View>
 
                     </View>
 
 
+                    <RBSheet
+          ref={ref => {
+            this.RBSheet = ref;
+          }}
+          height={450}
+          openDuration={250}
+          customStyles={{
+            container: {
+                borderTopRightRadius:10,
+                borderTopLeftRadius:10
+          //    justifyContent: "center",
+        //      alignItems: "center"
+            }
+          }}
+        >
+            <View style = {{
+                marginTop:40,
+
+
+            }}>
+          <Image
+                            style={{ width: wp("100%"), height: 200, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+                            source={require("../Assets/food.jpg")}
+                        />
+
+</View>
+           <View style = {{
+               height:200,
+               justifyContent:'center'
+           }}>
+               <Text style = {{
+                   textAlign:'center',
+                   fontSize:20
+               }}>Food is your smart cooking sidekick, offering personalized guidance every step of the way. from recipe recommendation just for you, to handy tools and helpful videos, caola food has everthing you need to improve life in the kitchen. experience what millions are enjoying on the web, free on your IOS device.</Text>
+               </View>             
+        </RBSheet>
 
 
                         
@@ -240,7 +283,7 @@ class Home extends Component {
 
                         <Image
                             style={{ width: wp("45%"), height: 150, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-                            source={require("../Assets/burger.jpg")}
+                            source={require("../Assets/exe.jpg")}
                         />
                         <View style={{
                             width: wp("42%"),
@@ -278,9 +321,11 @@ class Home extends Component {
                         borderRadius: 10
                     }}  >
 
+<TouchableOpacity  onPress={() => this.props.navigation.navigate('weightLossTips')}  >
+
                         <Image
                             style={{ width: wp("45%"), height: 150, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-                            source={require("../Assets/burger.jpg")}
+                            source={require("../Assets/exe.jpg")}
                         />
                         <View style={{
                             width: wp("42%"),
@@ -299,6 +344,7 @@ class Home extends Component {
                                 fontWeight: '800'
                             }}>Breakfast Recipes</Text>
                         </View>
+            </TouchableOpacity>
                     </View>
 
                     </View>

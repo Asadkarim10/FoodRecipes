@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View, Image, ScrollView } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Icons from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Octicons from 'react-native-vector-icons/Octicons'
 
 
 class Heartylunch extends Component {
@@ -18,9 +21,14 @@ class Heartylunch extends Component {
                     flexDirection: 'row',
                     justifyContent: 'space-around'
                 }}>
-                    <Text>Icons</Text>
-                    <Text>Hearty lunch</Text>
-                    <Text>Icons</Text>
+                    <Octicons
+ name="three-bars"  size={30} color="white" />
+                    <Text style = {{
+                        color:'white',
+                        fontSize:20,
+                        fontWeight:'700'
+                    }}>Hearty lunch</Text>
+                    <AntDesign name="camera" size={30} color="white" />
                 </View>
 
                 <View style={{
