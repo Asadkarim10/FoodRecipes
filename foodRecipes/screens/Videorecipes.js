@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, Image, ScrollView } from 'react-native';
+import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Video from 'react-native-video'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 class Videorecipes extends Component {
@@ -11,35 +12,35 @@ class Videorecipes extends Component {
                 flex: 1,
 
             }}>
-
                 <View style={{
                     flex: 1.5,
                     backgroundColor: "#ff5603",
                 }}>
 
-                    <View style = {{
-                        flexDirection:'row',
-                        height:50,
-                        alignItems:'center',
-                        marginRight:5,
-                        justifyContent:'flex-end'
+                    <View style={{
+                        flexDirection: 'row',
+                        height: 50,
+                        alignItems: 'center',
+                        marginRight: 5,
+                        justifyContent: 'flex-end'
                     }}>
-
-                        <Text>Asad</Text>
+                        <TouchableOpacity>
+                            <MaterialCommunityIcons name="cloud-upload" size={30} color="white" />
+                        </TouchableOpacity>
                     </View>
-                  
-                    
-                    <View style = {{
-                        flexDirection:'row',
 
-                        justifyContent:'flex-start'
+
+                    <View style={{
+                        flexDirection: 'row',
+
+                        justifyContent: 'flex-start'
                     }}>
 
-                        <Text style = {{
-                            fontSize:30,
-                            marginLeft:10,
-                            color:'white',
-                            fontWeight:"700"
+                        <Text style={{
+                            fontSize: 30,
+                            marginLeft: 10,
+                            color: 'white',
+                            fontWeight: "700"
                         }}>Video Recipes</Text>
                     </View>
 
@@ -50,10 +51,11 @@ class Videorecipes extends Component {
                 }}>
 
                     <ScrollView>
-                    <Video
-source={{ uri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1' }}
-style={{ width: 300, height: 300 }}
- />
+                        <Video
+                            source={{ uri: 'https://www.youtube.com/watch?v=ySl04jL10xI' }}
+                            style={{ flex: 1, justifyContent: 'center', width: 400, height: 300, }}
+                        />
+                        
 
                         <View style={{
                             height: 50,
@@ -68,8 +70,8 @@ style={{ width: 300, height: 300 }}
     </Text>
                         </View>
 
-                      
-                       
+
+
 
                     </ScrollView>
                 </View>
@@ -80,3 +82,5 @@ style={{ width: 300, height: 300 }}
 }
 
 export default Videorecipes;
+
+
